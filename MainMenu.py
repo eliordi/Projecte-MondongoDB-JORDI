@@ -18,28 +18,24 @@ def menu():
             print("\nMENÚ ADMIN: ")
             print("1. Crear una pel·lícula")
             print("2. Consultar tots els comentaris d'un usuari")
-            print("3. Eliminar pel·lícules")
-            print("4. Eliminar comentaris")
-            print("5. Eliminar usuaris")
-            print("6. Tancar l'aplicació")
+            print("3. Eliminar pel·líca")
+            print("4. Eliminar usuari")
+            print("5. Tancar l'aplicació")
             opcio = int(input("Introdueix una opció -> "))
 
             if opcio == 1:
                 AdminFunctions.crearPeli()
                 pass
             elif opcio == 2:
-                AdminFunctions.consultarComentsUsuari()
+                AdminFunctions.consultarCommentsUsuari()
                 pass
             elif opcio == 3:
-                AdminFunctions.eliminarPelis()
+                AdminFunctions.eliminarPeli()
                 pass
             elif opcio == 4:
-                AdminFunctions.eliminarComents()
+                AdminFunctions.eliminarUser()
                 pass
             elif opcio == 5:
-                AdminFunctions.eliminarUsers()
-                pass
-            elif opcio == 6:
                 print("Fins prompte!!")
                 break
             else:
@@ -56,7 +52,7 @@ def menu():
             print("4. Consultar els comentaris d'una pel·lícula")
             print("5. Crear un usuari")
             print("6. Tancar l'aplicació")
-            opcio = int(input("Introdueix una opció -> "))
+            opcio = int(input("\n Introdueix una opció -> "))
 
             if opcio == 1:
                 UserFunctions.mostrarInfoPeli()
@@ -68,7 +64,7 @@ def menu():
                 UserFunctions.consultarActorsPeli()
                 pass
             elif opcio == 4:
-                UserFunctions.consultarComentsPeli()
+                UserFunctions.consultarCommentsPeli()
                 pass
             elif opcio == 5:
                 UserFunctions.crearUsuari()
