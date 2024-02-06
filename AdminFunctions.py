@@ -82,9 +82,6 @@ def eliminarPeli():
         print(f"No s'ha trobat la pel·lícula '{peli}'")
 
 
-def eliminarComments():
-    pass
-
 def eliminarUser():
     
     print("\nELIMINAR UN USUARI")
@@ -103,7 +100,6 @@ def eliminarUser():
         if opcio == 1:
 
             commentsUsu = db.comments.find({'name': usu})
-            #cantidad = commentsUsu.count()
 
             if commentsUsu:
                 db.comments.delete_many({'name': usu})

@@ -66,7 +66,7 @@ def menu():
                 UserFunctions.consultarCommentsPeli()
                 pass
             elif opcio == 5:
-                UserFunctions.crearUsuari()
+                UserFunctions.crearUsuari(usuari)
                 pass
             elif opcio == 6:
                 print("Fins prompte!!")
