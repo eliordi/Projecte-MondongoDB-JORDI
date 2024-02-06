@@ -68,11 +68,52 @@ def consultarCommentsUsuari():
 
 
 def eliminarPeli():
-    pass
+
+    print("\nELIMINAR UNA PEL·LÍCULA")
+
+    peli = input("\nIntrodueix el nom de la pel·lícula que vols eliminar: ")
+
+    pelicula = db.movies.find_one({'title':peli})
+
+    if pelicula:
+        db.movies.delete_one({'_id': pelicula['_id']})
+        print(f"La pel·lícula '{peli}' ha sigut eliminada")
+    else:
+        print(f"No s'ha trobat la pel·lícula '{peli}'")
+
 
 def eliminarComments():
     pass
 
 def eliminarUser():
-    pass
+    
+    print("\nELIMINAR UN USUARI")
+
+    usu = input("\nIntrodueix el nom de l'usuari que vols eliminar: ")
+
+    user = db.users.find_one({'name':usu})
+
+    if user:
+        db.users.delete_one({'_id': user['_id']})
+        print(f"L'usuari '{usu}' ha sigut eliminat")
+
+        print("\nVols eliminar els seus comentaris també? ")
+        opcio = int(input(" SI(1) | NO(2) -> "))
+
+        if opcio == 1:
+
+            commentsUsu = db.comments.find({'name': usu})
+            #cantidad = commentsUsu.count()
+
+            if commentsUsu:
+                db.comments.delete_many({'name': usu})
+                print(f"S'han eliminat els comentaris de l'usuari '{usu}'.")
+            else:
+                print(f"L'usuari '{usu}' no tenia comentaris.")
+
+    else:
+        print(f"No s'ha trobat l'usuari '{usu}'")
+
+    
+
 

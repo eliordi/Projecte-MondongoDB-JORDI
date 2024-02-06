@@ -2,7 +2,6 @@ import UserFunctions
 import AdminFunctions
 
 
-
 def menu():
 
     print("\n---------------------")
